@@ -24,12 +24,15 @@ public class Reservation {
     }
 
     public double getPrice() {
-        return price;
+        double basePrice;
+
+        if(roomType.equalsIgnoreCase("King")){
+            basePrice = 139;
+        } else if (roomType.equalsIgnoreCase("double")) {
+            basePrice = 124;
+        }
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
     public int getNumberOfNights() {
         return numberOfNights;
@@ -51,7 +54,4 @@ public class Reservation {
         return reservationTotal;
     }
 
-    public void setReservationTotal(int reservationTotal) {
-        this.reservationTotal = reservationTotal;
-    }
 }

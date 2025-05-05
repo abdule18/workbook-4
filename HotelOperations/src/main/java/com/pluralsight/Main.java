@@ -20,7 +20,7 @@ public class Main {
         String occupied = scanner.nextLine();
 
 
-        Room  room = new Room(numBed, price, occupied, )
+//        Room  room = new Room(numBed, price, occupied, )
 
     }
 }
