@@ -7,20 +7,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        testRoom();
 
-        System.out.println("Enter number of bed: ");
-        int numBed = scanner.nextInt();
-        scanner.nextLine();
+    }
 
-        System.out.println("Enter price: ");
-        double price = scanner.nextDouble();
-        scanner.nextLine();
+    public static void testRoom(){
 
-        System.out.println("Is the room occupied?: ");
-        String occupied = scanner.nextLine();
-
-
-//        Room  room = new Room(numBed, price, occupied, )
-
+        Room r1 = new Room(1, 150);
+        System.out.println(r1.isAvailable());
+        r1.checkIn();
+        System.out.println(r1.isAvailable());
     }
 }

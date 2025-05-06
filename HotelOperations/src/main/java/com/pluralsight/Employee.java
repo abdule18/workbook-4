@@ -5,28 +5,17 @@ public class Employee {
     private String name;
     private String department;
     private double payRate;
-    private double hoursWorked;
-    private double totalPay;
-    private double regularHours;
-    private double overtimeHours;
+    private float hoursWorked;
 
-    public Employee(int employeeId, String name, String department, double payRate, double hoursWorked, double totalPay, double regularHours, double overtimeHours) {
+    public Employee(int employeeId, String name, String department, double payRates) {
         this.employeeId = employeeId;
         this.name = name;
         this.department = department;
         this.payRate = payRate;
-        this.hoursWorked = hoursWorked;
-        this.totalPay = totalPay;
-        this.regularHours = regularHours;
-        this.overtimeHours = overtimeHours;
     }
 
     public int getEmployeeId() {
         return employeeId;
-    }
-
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
     }
 
     public String getName() {
@@ -53,41 +42,43 @@ public class Employee {
         this.payRate = payRate;
     }
 
-    public double getHoursWorked() {
+    public float getHoursWorked() {
 
-        if (hoursWorked > 40) {
-            return 40;
-        } else {
-            return hoursWorked;
-        }
-
+        return hoursWorked;
     }
 
-    public void setHoursWorked(double hoursWorked) {
+    public void setHoursWorked(float hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
 
     public double getTotalPay() {
-        return totalPay;
+        return (getRegularHours() * payRate) + (getOvertimeHours() * payRate * 1.5));
     }
 
-    public void setTotalPay(double totalPay) {
-        this.totalPay = totalPay;
+    public  float getRegularHours(){
+        if(hoursWorked > 40){
+            return 40;
+        } else {
+            return hoursWorked;
+        }
     }
 
-    public double getRegularHours() {
-        return regularHours;
+    public float getOvertimeHours(){
+        return (hoursWorked > 40) ? hoursWorked - 40 : 0;
     }
 
-    public void setRegularHours(double regularHours) {
-        this.regularHours = regularHours;
+
+    private double punchInTime;
+
+    public void punchIn(double  time){
+        this.punchInTime = time;
     }
 
-    public double getOvertimeHours() {
-        return overtimeHours;
+    public void punchIn(){
+        Lo
     }
 
-    public void setOvertimeHours(double overtimeHours) {
-        this.overtimeHours = overtimeHours;
+    public void punchOut(double  time){
+        this.hoursWorked += (time - this.punchInTime);
     }
 }
