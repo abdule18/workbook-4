@@ -17,32 +17,16 @@ public class Room {
         return numberOfbed;
     }
 
-    public void setNumberOfbed(int numberOfbed) {
-        this.numberOfbed = numberOfbed;
-    }
-
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public boolean isOccupied() {
         return occupied;
     }
 
-    public void setOccupied(boolean occupied) {
-        this.occupied = occupied;
-    }
-
     public boolean isDirty() {
         return dirty;
-    }
-
-    public void setDirty(boolean dirty) {
-        this.dirty = dirty;
     }
 
     public boolean isAvailable() {

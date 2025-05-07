@@ -5,7 +5,7 @@ public class Reservation {
     private int numberOfNights;
     private boolean weekend;
 
-    public Reservation(String roomType, double price, int numberOfNights, boolean weekend, int reservationTotal) {
+    public Reservation(String roomType, boolean weekend, int numberOfNights) {
         this.roomType = roomType;
         this.numberOfNights = numberOfNights;
         this.weekend = weekend;
